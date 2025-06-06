@@ -2,16 +2,20 @@ const { Client } = require("@xhayper/discord-rpc");
 const { ActivityType } = require("discord-api-types/v10");
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('node:path');
+require('colors');
 
-const client = new Client({ clientId: "1380509208176365789" });
-client.login().then(() => console.log('>> Discord RPC Connected')).catch(console.error);
+let client;
 
-let oldActivity = null;
+const developerMode = process.env.npm_lifecycle_event === 'dev';
+const DevLog = (content) => developerMode ? console.log('</> '.green, content) : null;
+
+function discordConnection() {
+    client = new Client({ clientId: "1380509208176365789" });
+    client.login().then(() => DevLog('Discord RPC Connected')).catch(console.error);
+}
+
 function setActivity(data) {
     if (!client?.user) return;
-
-    if (oldActivity == data) return;
-    oldActivity = data;
 
     client.user?.setActivity({
         ...data,
@@ -43,14 +47,22 @@ function setMusicForActivity(data) {
 
         if (isPaused) {
             pauseChecker = pauseChecker + 1;
-            if (pauseChecker == 2) return setActivity({ details: 'Youtube Music' });
+            if (pauseChecker == 2) {
+                DevLog('Music Paused');
+                return setActivity({ details: 'Youtube Music' });
+            }
+
             return;
         }
+
+        DevLog('Music Playing');
 
         oldMusicData = data;
         pauseChecker = 0;
         return setActivity(object);
     } else {
+        DevLog('Music Changed');
+
         oldMusicData = data;
         return setActivity(object);
     }
@@ -68,6 +80,8 @@ function createWindow() {
 
     window.loadURL('http://music.youtube.com');
     ipcMain.on('music', (_, data) => setMusicForActivity(data));
+
+    discordConnection();
 }
 
 app.whenReady().then(() => {
