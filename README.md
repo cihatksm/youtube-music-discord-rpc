@@ -23,7 +23,6 @@ npm start
 
 ## Requirements
 
-- Node.js (vXX or higher)
 - Discord desktop app
 - YouTube Music account (signed in with your Google account)
 
