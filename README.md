@@ -4,11 +4,11 @@
 
 ## Features
 
-- 🎧 Displays current playing song from YouTube Music on your Discord status  
-- ⏱ Shows track duration and elapsed time  
-- 🔗 Optional link to the track  
-- 🖥 Runs silently in the background  
-- 💬 Clean and minimal interface  
+- 🎧 Displays current playing song from YouTube Music on your Discord status
+- ⏱ Shows track duration and elapsed time
+- 🔗 Optional link to the track
+- 🖥 Runs silently in the background
+- 💬 Clean and minimal interface
 
 ## Installation
 
@@ -23,13 +23,9 @@ npm start
 
 ## Requirements
 
-- Node.js (vXX or higher)  
-- Discord desktop app  
+- Node.js (vXX or higher)
+- Discord desktop app
 - YouTube Music account (signed in with your Google account)
-
-## Preview
-
-> (Add a screenshot or GIF of the RPC in action)
 
 ## Contributing
 
