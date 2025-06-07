@@ -20,6 +20,7 @@
     "@xhayper/discord-rpc": "^1.2.2",
     "colors": "^1.4.0",
     "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "^10.0.1",
     "nodemon": "^3.1.10"
   },
   "devDependencies": {
