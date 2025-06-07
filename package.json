@@ -10,11 +10,12 @@
     "make": "electron-forge make"
   },
   "keywords": [],
-  "author": {
-    "name": "cihatksm",
-    "email": "cihatksm@gmail.com"
+  "author": "CihatKsm <cihatksm@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cihatksm/youtube-music-discord-rpc.git"
   },
-  "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "@xhayper/discord-rpc": "^1.2.2",
