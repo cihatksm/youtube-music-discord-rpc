@@ -1,9 +1,11 @@
 const { Client } = require("@xhayper/discord-rpc");
 const { ActivityType } = require("discord-api-types/v10");
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, screen } = require('electron')
 const path = require('node:path');
+const Store = require('electron-store').default;
 require('colors');
 
+const store = new Store();
 let client;
 
 const developerMode = process.env.npm_lifecycle_event === 'dev';
@@ -69,13 +71,33 @@ function setMusicForActivity(data) {
 }
 
 function createWindow() {
+    const { height: screenHeight, width: screenWidth } = (screen.getPrimaryDisplay()).workAreaSize;
+
+    // Get saved window bounds or use defaults
+    const savedBounds = store.get('windowBounds', {
+        width: screenHeight <= 720 ? screenWidth : screenHeight <= 1080 ? Math.floor(screenWidth / 3 * 2) : Math.floor(screenWidth / 2),
+        height: screenHeight <= 720 ? screenHeight : screenHeight <= 1080 ? Math.floor(screenHeight / 3 * 2) : Math.floor(screenHeight / 2),
+        x: undefined,
+        y: undefined
+    });
+
     const window = new BrowserWindow({
-        width: 800,
-        height: 600,
+        ...savedBounds,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         },
-        icon: path.join(__dirname, 'icon.png')
+        icon: path.join(__dirname, 'icon.png'),
+        autoHideMenuBar: true,
+        frame: true
+    });
+
+    // Save window bounds when window is moved or resized
+    window.on('moved', () => {
+        store.set('windowBounds', window.getBounds());
+    });
+
+    window.on('resize', () => {
+        store.set('windowBounds', window.getBounds());
     });
 
     window.loadURL('http://music.youtube.com');
