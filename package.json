@@ -1,6 +1,6 @@
 {
   "name": "youtube-music-discord-rpc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a discord rpc for youtube music",
   "main": "server.js",
   "scripts": {
@@ -16,13 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/cihatksm/youtube-music-discord-rpc.git"
   },
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@xhayper/discord-rpc": "^1.2.2",
     "colors": "^1.4.0",
-    "electron-squirrel-startup": "^1.0.1",
-    "electron-store": "^10.0.1",
-    "nodemon": "^3.1.10"
+    "electron-store": "^10.0.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.8.1",
@@ -33,6 +31,7 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.8.1",
     "@electron-forge/plugin-fuses": "^7.8.1",
     "@electron/fuses": "^1.8.0",
-    "electron": "^36.4.0"
+    "electron": "^36.4.0",
+    "nodemon": "^3.1.10"
   }
 }
