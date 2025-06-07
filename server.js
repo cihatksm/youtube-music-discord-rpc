@@ -1,9 +1,13 @@
-const { Client } = require("@xhayper/discord-rpc");
-const { ActivityType } = require("discord-api-types/v10");
-const { app, BrowserWindow, ipcMain, screen } = require('electron')
-const path = require('node:path');
-const Store = require('electron-store').default;
-require('colors');
+import { Client } from "@xhayper/discord-rpc";
+import { ActivityType } from "discord-api-types/v10";
+import { app, BrowserWindow, ipcMain, screen } from 'electron';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import Store from 'electron-store';
+import 'colors';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const store = new Store();
 let client;
@@ -86,7 +90,7 @@ function createWindow() {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         },
-        icon: path.join(__dirname, 'icon.png'),
+        icon: path.join(__dirname, 'assets/icon.png'),
         autoHideMenuBar: true,
         frame: true
     });
