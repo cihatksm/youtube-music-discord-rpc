@@ -33,8 +33,8 @@ export default {
         description,
         iconUrl: path.resolve(__dirname, 'assets/icon.ico'),
         setupIcon: path.resolve(__dirname, 'assets/icon.ico'),
-        setupExe: packageJson.name + '-' + packageJson.version.replaceAll('.', '_') + '-Setup.exe',
-        setupMsi: packageJson.name + '-' + packageJson.version.replaceAll('.', '_') + '-Setup.msi',
+        setupExe: packageJson.name + '-' + packageJson.version + ' Setup.exe',
+        setupMsi: packageJson.name + '-' + packageJson.version + ' Setup.msi',
         shortcuts: {
           createDesktopShortcut: true
         }
