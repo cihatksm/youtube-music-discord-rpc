@@ -1,35 +1,57 @@
 # YouTube Music Discord RPC
 
-🎵 **YouTube Music Discord RPC** is a lightweight application that displays your currently playing track on YouTube Music as a rich presence on your Discord profile — in real time.
+This project is an application that displays your currently playing tracks from YouTube Music as "Now Playing" on Discord.
 
-## Features
+## 🛡️ Privacy Policy
 
-- 🎧 Displays current playing song from YouTube Music on your Discord status
-- ⏱ Shows track duration and elapsed time
-- 🔗 Optional link to the track
-- 🖥 Runs silently in the background
-- 💬 Clean and minimal interface
+This project is developed under the auspices of [cihatksm.com](https://cihatksm.com) and is completely open source. The open-source nature of the project serves as proof that the code is fully transparent and no hidden data collection is taking place.
 
-## Installation
+### Data Collection and Privacy
 
-```bash
-git clone https://github.com/cihatksm/youtube-music-discord-rpc.git
-cd youtube-music-discord-rpc
-npm install
-npm start
-```
+- The project does not collect any personal data from users
+- Interactions with YouTube Music and Discord platforms are only used to display song information
+- No analytics or tracking tools are used
+- All code is open source and distributed under the [MIT License](LICENSE)
 
-> Make sure your Discord desktop client is running.
+## 🚀 Features
 
-## Requirements
+- Displays currently playing songs from YouTube Music on Discord
+- Shows song name, artist, and album information
+- Real-time updates
+- Low system resource usage
 
-- Discord desktop app
-- YouTube Music account (signed in with your Google account)
+## 📋 Requirements
 
-## Contributing
+- Windows operating system
+- Discord desktop application
+- YouTube Music must be open in web browser
 
-Contributions, issues, and suggestions are always welcome. Feel free to open a pull request or issue!
+## ⚙️ Installation
 
-## License
+1. Download the latest version from the [Releases](https://github.com/cihatksm/youtube-music-discord-rpc/releases) page
+2. Run the downloaded file
+3. Open YouTube Music in your web browser
+4. Open Discord
 
-This project is licensed under the [MIT License](LICENSE).
+## 🤝 Contributing
+
+If you want to contribute to the project:
+
+1. Fork this repository
+2. Create a new branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+- Website: [cihatksm.com](https://cihatksm.com)
+- GitHub: [@cihatksm](https://github.com/cihatksm)
+
+---
+
+This project is developed by [cihatksm.com](https://cihatksm.com) and is open to community contributions.
