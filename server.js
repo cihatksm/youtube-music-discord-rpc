@@ -1,9 +1,10 @@
-import { Client } from "@xhayper/discord-rpc";
-import { ActivityType } from "discord-api-types/v10";
 import { app, BrowserWindow, ipcMain, screen } from 'electron';
-import path from 'node:path';
+import { updateElectronApp } from 'update-electron-app'
+import { ActivityType } from "discord-api-types/v10";
+import { Client } from "@xhayper/discord-rpc";
 import { fileURLToPath } from 'node:url';
 import Store from 'electron-store';
+import path from 'node:path';
 import 'colors';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -108,6 +109,7 @@ function createWindow() {
     ipcMain.on('music', (_, data) => setMusicForActivity(data));
 
     discordConnection();
+    updateElectronApp();
 }
 
 app.whenReady().then(() => {

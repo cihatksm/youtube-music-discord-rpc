@@ -12,7 +12,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const name = 'Youtube Music Discord RPC';
-const description = packageJson.description;
 
 export default {
   packagerConfig: {
@@ -30,7 +29,7 @@ export default {
       config: {
         name: packageJson.name,
         authors: packageJson.author.name,
-        description,
+        description: packageJson.description,
         iconUrl: path.resolve(__dirname, 'assets/icon.ico'),
         setupIcon: path.resolve(__dirname, 'assets/icon.ico'),
         setupExe: packageJson.name + '-' + packageJson.version + ' Setup.exe',
@@ -70,4 +69,16 @@ export default {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: packageJson.author.name,
+          name: packageJson.name
+        },
+        prerelease: true
+      }
+    }
+  ]
 };
