@@ -1,6 +1,7 @@
 # YouTube Music Discord RPC
 
 > **Project moved to Gitlab due to Github storage space problem.**
+
 > https://gitlab.com/cihatksm/youtube-music-discord-rpc
 
 This project is an application that displays your currently playing tracks from YouTube Music as "Now Playing" on Discord.
